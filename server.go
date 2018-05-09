@@ -151,7 +151,7 @@ func (m *NvidiaDevicePlugin) InitContainer(ctx context.Context, in *InitRequest)
 				"NVIDIA_VISIBLE_DEVICES": strings.Join(in.Container.Devices, ","),
 			},
 			Annotations: map[string]string{
-				"nvidia.com": "nvidia.com",
+				"annotation.io.kubernetes.container.runtime": "nvidia",
 			},
 		},
 	}

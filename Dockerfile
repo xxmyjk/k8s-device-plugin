@@ -27,9 +27,12 @@ RUN go install -ldflags="-s -w" -v nvidia-device-plugin
 
 FROM debian:stretch-slim
 
+WORKDIR /work
+
 ENV NVIDIA_VISIBLE_DEVICES=all
 ENV NVIDIA_DRIVER_CAPABILITIES=utility,compute
 
 COPY --from=build /go/bin/nvidia-device-plugin /usr/bin/nvidia-device-plugin
+COPY --from=build /go/src/nvidia-device-plugin/nvidia.json /work/nvidia.json
 
 CMD ["nvidia-device-plugin"]
