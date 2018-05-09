@@ -3,9 +3,11 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"strings"
 
+	"github.com/NVIDIA/nvidia-docker/src/nvidia"
 	"github.com/NVIDIA/nvidia-docker/src/nvml"
 
 	"golang.org/x/net/context"
@@ -19,16 +21,19 @@ func check(err error) {
 }
 
 func getDevices() []*pluginapi.Device {
-	n, err := nvml.GetDeviceCount()
+	devices, err := nvidia.LookupDevices()
 	check(err)
 
 	var devs []*pluginapi.Device
-	for i := uint(0); i < n; i++ {
-		d, err := nvml.NewDeviceLite(i)
-		check(err)
+	for _, d := range devices {
 		devs = append(devs, &pluginapi.Device{
 			ID:     d.UUID,
 			Health: pluginapi.Healthy,
+			Attributes: map[string]string{
+				resourceName + "-memory": fmt.Sprintf("%d", *d.Memory.Global),
+				resourceName + "-ECC":    fmt.Sprintf("%t", *d.Memory.ECC),
+				resourceName + "-arch":   fmt.Sprintf("%s", *d.Arch),
+			},
 		})
 	}
 
