@@ -34,5 +34,6 @@ ENV NVIDIA_DRIVER_CAPABILITIES=utility,compute
 
 COPY --from=build /go/bin/nvidia-device-plugin /usr/bin/nvidia-device-plugin
 COPY --from=build /go/src/nvidia-device-plugin/nvidia.json /work/nvidia.json
+COPY --from=build /go/src/nvidia-device-plugin/copy.sh /work/copy.sh
 
 CMD ["nvidia-device-plugin"]

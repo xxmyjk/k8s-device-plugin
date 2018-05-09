@@ -15,8 +15,8 @@ spec:
       initContainers:
       - image: nvidiak8s/device-plugin:1.9
         name: nvidia-device-plugin-install-hooks
-        command: ["cp"]
-        args: ["./nvidia.json", "/hook/nvidia.json"]
+        command: ["sh"]
+        args: ["-c", "/work/copy.sh"]
         volumeMounts:
           - name: docker-hook
             mountPath: /hook
