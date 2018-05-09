@@ -69,6 +69,8 @@ message Device {
 	string ID = 1;
 	// Health of the device, can be healthy or unhealthy, see constants.go
 	string health = 2;
+	// Attributes of the device must start by vendor name (e.g "nvidia.com/gpu/memory")
+	map<string, string> Attributes = 3;
 }
 
 // - Allocate is expected to be called during pod creation since allocation
@@ -96,6 +98,8 @@ message AllocateResponse {
 	repeated Mount mounts = 2;
 	// Devices for the container.
 	repeated DeviceSpec devices = 3;
+	// Annotations for the container
+	map<string, string> annotations = 4;
 }
 
 // Mount specifies a host volume to mount into a container.

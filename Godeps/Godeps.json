@@ -1,27 +1,27 @@
 {
-	"ImportPath": "nvidia-device-plugin",
-	"GoVersion": "go1.8",
+	"ImportPath": "k8s-device-plugin",
+	"GoVersion": "go1.9",
 	"GodepVersion": "v79",
 	"Deps": [
 		{
 			"ImportPath": "github.com/NVIDIA/nvidia-docker/src/cuda",
-			"Comment": "v1.0.1-5-g4dbc243",
-			"Rev": "4dbc2430df9393cee84ccf4ffc96ccf96f0f70a4"
+			"Comment": "v1.0.1-6-g3491967",
+			"Rev": "3491967c1c313be935ccfccc9f0eb73523a66918"
 		},
 		{
 			"ImportPath": "github.com/NVIDIA/nvidia-docker/src/ldcache",
-			"Comment": "v1.0.1-5-g4dbc243",
-			"Rev": "4dbc2430df9393cee84ccf4ffc96ccf96f0f70a4"
+			"Comment": "v1.0.1-6-g3491967",
+			"Rev": "3491967c1c313be935ccfccc9f0eb73523a66918"
 		},
 		{
 			"ImportPath": "github.com/NVIDIA/nvidia-docker/src/nvidia",
-			"Comment": "v1.0.1-5-g4dbc243",
-			"Rev": "4dbc2430df9393cee84ccf4ffc96ccf96f0f70a4"
+			"Comment": "v1.0.1-6-g3491967",
+			"Rev": "3491967c1c313be935ccfccc9f0eb73523a66918"
 		},
 		{
 			"ImportPath": "github.com/NVIDIA/nvidia-docker/src/nvml",
-			"Comment": "v1.0.1-5-g4dbc243",
-			"Rev": "4dbc2430df9393cee84ccf4ffc96ccf96f0f70a4"
+			"Comment": "v1.0.1-6-g3491967",
+			"Rev": "3491967c1c313be935ccfccc9f0eb73523a66918"
 		},
 		{
 			"ImportPath": "github.com/fsnotify/fsnotify",
@@ -180,8 +180,8 @@
 		},
 		{
 			"ImportPath": "k8s.io/kubernetes/pkg/kubelet/apis/deviceplugin/v1alpha",
-			"Comment": "v1.10.0-alpha.0-2045-gea9021a",
-			"Rev": "ea9021a04c73b74d1937ea9db22aebc1e7caebff"
+			"Comment": "v1.9.0-beta.1-80-g68c2076",
+			"Rev": "68c2076f3988f53297ec996a8f5b07982b7453ad"
 		}
 	]
 }
