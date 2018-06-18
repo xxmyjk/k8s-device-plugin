@@ -3,5 +3,5 @@
     "Annotations": {
 	"annotation.io.kubernetes.container.runtime": "nvidia"
     },
-    "Images": ["nvidiak8s/device-plugin"]
+    "Images": ["nvcr.io/nvidia/k8s/device-plugin"]
 }
