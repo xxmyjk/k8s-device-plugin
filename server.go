@@ -17,7 +17,7 @@ import (
 )
 
 const (
-	resourceName           = "nvidia.com/gpu"
+	resourceName           = "nvidia/gpu"
 	serverSock             = pluginapi.DevicePluginPath + "nvidia.sock"
 	envDisableHealthChecks = "DP_DISABLE_HEALTHCHECKS"
 	allHealthChecks        = "xids"
